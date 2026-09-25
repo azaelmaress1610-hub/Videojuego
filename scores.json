@@ -1,0 +1,32 @@
+[
+  {
+    "id": "1790342603239-9d3923b780546",
+    "name": "cajero7",
+    "score": 9440,
+    "wave": 6,
+    "enemiesDefeated": 33,
+    "bossesDefeated": 0,
+    "timeSurvived": 140,
+    "createdAt": "2026-09-25T13:23:23.243Z"
+  },
+  {
+    "id": "1790304809759-6dd275bdf41f1",
+    "name": "Juan",
+    "score": 8012,
+    "wave": 5,
+    "enemiesDefeated": 29,
+    "bossesDefeated": 0,
+    "timeSurvived": 112,
+    "createdAt": "2026-09-25T02:53:29.760Z"
+  },
+  {
+    "id": "1790304854310-1a6e09d7921bc8",
+    "name": "Maria",
+    "score": 3828,
+    "wave": 3,
+    "enemiesDefeated": 8,
+    "bossesDefeated": 0,
+    "timeSurvived": 28,
+    "createdAt": "2026-09-25T02:54:14.311Z"
+  }
+]

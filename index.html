@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Neon Siege</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+<body>
+
+    <!-- =====================================================
+         HUD DEL JUEGO
+         ===================================================== -->
+
+    <header class="hud">
+        <div class="controls">
+            <span><b></b></span>
+            <span><b></b></span>
+            <span><b></b></span>
+        </div>
+    </header>
+
+
+    <!-- =====================================================
+         CANVAS PRINCIPAL
+         ===================================================== -->
+
+    <canvas
+        id="gameCanvas"
+        tabindex="0"
+    >
+        Tu navegador no soporta Canvas.
+    </canvas>
+
+
+    <!-- =====================================================
+         MENSAJE ANTIGUO DEL JUEGO
+         ===================================================== -->
+
+    <section
+        id="message"
+        class="message hidden"
+        aria-live="polite"
+    >
+        <p id="messageTitle"></p>
+
+        <p id="messageText"></p>
+
+        <button
+            id="restartButton"
+            type="button"
+        >
+            Jugar otra vez
+        </button>
+    </section>
+
+
+    <!-- =====================================================
+         LEYENDA
+         ===================================================== -->
+
+    <div class="legend">
+        <span>
+            <i class="player-dot"></i>
+        </span>
+
+        <span>
+            <i class="enemy-dot"></i>
+        </span>
+    </div>
+
+
+    <!-- =====================================================
+         CLASE BASE DE ENEMIGOS
+         ===================================================== -->
+
+    <script src="js/enemigos/Enemigo.js"></script>
+
+
+    <!-- =====================================================
+         ENEMIGOS NORMALES
+         ===================================================== -->
+
+    <script src="js/enemigos/Hunter.js"></script>
+
+    <script src="js/enemigos/Ranger.js"></script>
+
+    <script src="js/enemigos/Swarm.js"></script>
+
+    <script src="js/enemigos/Tank.js"></script>
+
+    <script src="js/enemigos/Kamikaze.js"></script>
+
+    <script src="js/enemigos/Antrex.js"></script>
+
+
+    <!-- =====================================================
+         JEFES
+         ===================================================== -->
+
+    <script src="js/jefes/Jefe1.js"></script>
+
+    <script src="js/jefes/Jefe2.js"></script>
+
+
+    <!-- =====================================================
+         PERSONAJES Y ARMAS
+         ===================================================== -->
+
+    <script src="js/personaje/PersonajeNormal.js"></script>
+
+    <script src="js/personaje/PersonajeEscopeta.js"></script>
+
+    <script src="js/personaje/PersonajeEspada.js"></script>
+
+
+    <!-- =====================================================
+         SISTEMAS DEL JUEGO
+         ===================================================== -->
+
+    <script src="js/AudioManager.js"></script>
+
+    <script src="js/Aditamentos.js"></script>
+
+    <script src="js/SistemaExperiencia.js"></script>
+
+
+    <!-- =====================================================
+         MENÚ PRINCIPAL
+         
+         Este archivo crea automáticamente:
+         - Menú principal
+         - Ranking
+         - Pausa
+         - Nombre del jugador
+         - Resultado final
+         ===================================================== -->
+
+    <script src="js/MenuPrincipal.js"></script>
+
+
+    <!-- =====================================================
+         MOTOR PRINCIPAL
+         
+         main.js siempre debe cargarse al final.
+         ===================================================== -->
+
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

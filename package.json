@@ -1,0 +1,23 @@
+{
+    "name": "neon-siege-backend",
+    "version": "1.0.0",
+    "description": "Servidor de puntuaciones para Neon Siege",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js",
+        "dev": "node --watch server.js"
+    },
+    "keywords": [
+        "neon-siege",
+        "videojuego",
+        "ranking",
+        "nodejs",
+        "express"
+    ],
+    "author": "Azael Roberto Mares Martínez",
+    "license": "ISC",
+    "dependencies": {
+        "cors": "^2.8.5",
+        "express": "^5.1.0"
+    }
+}

@@ -1,0 +1,552 @@
+/* ============================================================
+   AJUSTAR JUEGO A TODA LA PANTALLA
+   ============================================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    overflow: hidden;
+
+    background: #050509;
+
+    color: #f4f7ff;
+
+    font-family:
+        "Trebuchet MS",
+        "Segoe UI",
+        sans-serif;
+}
+
+
+/* CANVAS EN TODA LA PANTALLA */
+
+#gameCanvas {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    z-index: 0;
+
+    display: block;
+
+    width: 100vw;
+    height: 100vh;
+
+    margin: 0;
+    padding: 0;
+
+    border: 0;
+}
+
+
+/* HUD SOBRE EL CANVAS */
+
+.hud {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    z-index: 2;
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        flex-start;
+
+    padding:
+        24px 30px;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(
+                5,
+                5,
+                9,
+                0.95
+            ),
+            rgba(
+                5,
+                5,
+                9,
+                0
+            )
+        );
+}
+
+
+/* LEYENDA SOBRE EL CANVAS */
+
+.legend {
+    position: fixed;
+
+    z-index: 2;
+
+    right: 30px;
+    bottom: 24px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items:
+        flex-end;
+
+    gap: 8px;
+
+    pointer-events: none;
+}
+/* ============================================================
+   PANTALLAS DEL MENÚ
+   ============================================================ */
+
+.neon-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 24px;
+
+    color: #ffffff;
+
+    background:
+        radial-gradient(
+            circle at 50% 25%,
+            rgba(0, 230, 255, 0.17),
+            transparent 34%
+        ),
+        linear-gradient(
+            135deg,
+            rgba(2, 7, 19, 0.97),
+            rgba(12, 4, 30, 0.97)
+        );
+
+    backdrop-filter: blur(5px);
+}
+
+
+/* Ocultar pantallas */
+
+.neon-hidden {
+    display: none !important;
+}
+
+
+/* ============================================================
+   PANEL
+   ============================================================ */
+
+.neon-panel {
+    width: min(820px, 94vw);
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    padding: 36px;
+
+    border: 2px solid #00eaff;
+    border-radius: 18px;
+
+    background:
+        rgba(5, 13, 29, 0.96);
+
+    box-shadow:
+        0 0 24px
+        rgba(0, 234, 255, 0.42),
+        inset 0 0 30px
+        rgba(111, 42, 255, 0.12);
+
+    text-align: center;
+}
+
+.neon-small-panel {
+    width: min(560px, 94vw);
+}
+
+
+/* ============================================================
+   TÍTULOS
+   ============================================================ */
+
+.neon-title {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size:
+        clamp(
+            48px,
+            9vw,
+            92px
+        );
+
+    line-height: 0.9;
+    letter-spacing: 5px;
+
+    text-transform: uppercase;
+
+    text-shadow:
+        0 0 7px #ffffff,
+        0 0 18px #00eaff,
+        0 0 38px #7a24ff;
+}
+
+.neon-subtitle {
+    margin: 14px 0 30px;
+
+    color: #7df7ff;
+
+    font-size: 15px;
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+}
+
+.neon-section-title {
+    margin: 0 0 22px;
+
+    color: #7df7ff;
+
+    font-size: 30px;
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+}
+
+.neon-description {
+    max-width: 650px;
+
+    margin: 0 auto 26px;
+
+    color: #d8e9ff;
+
+    font-size: 16px;
+    line-height: 1.65;
+}
+
+
+/* ============================================================
+   BOTONES
+   ============================================================ */
+
+.neon-actions {
+    display: grid;
+
+    gap: 13px;
+
+    width: min(390px, 100%);
+
+    margin: 0 auto;
+}
+
+.neon-button {
+    width: 100%;
+
+    padding: 15px 22px;
+
+    border: 1px solid #20efff;
+    border-radius: 8px;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 176, 210, 0.24),
+            rgba(114, 35, 255, 0.25)
+        );
+
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.16s ease,
+        box-shadow 0.16s ease,
+        background 0.16s ease;
+}
+
+.neon-button:hover,
+.neon-button:focus-visible {
+    outline: none;
+
+    transform:
+        translateY(-2px);
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 222, 255, 0.43),
+            rgba(130, 53, 255, 0.44)
+        );
+
+    box-shadow:
+        0 0 18px
+        rgba(0, 234, 255, 0.42);
+}
+
+.neon-button-danger {
+    border-color: #ff315f;
+
+    background:
+        rgba(135, 12, 49, 0.34);
+}
+
+.neon-button-danger:hover {
+    background:
+        rgba(211, 22, 73, 0.50);
+
+    box-shadow:
+        0 0 18px
+        rgba(255, 49, 95, 0.45);
+}
+
+
+/* ============================================================
+   CAMPO DEL NOMBRE
+   ============================================================ */
+
+.neon-name-input {
+    display: block;
+
+    width: min(390px, 100%);
+
+    margin: 0 auto 18px;
+
+    padding: 14px 16px;
+
+    border: 1px solid #20efff;
+    border-radius: 8px;
+
+    outline: none;
+
+    color: #ffffff;
+    background: #05101f;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    text-align: center;
+}
+
+.neon-name-input:focus {
+    box-shadow:
+        0 0 18px
+        rgba(0, 234, 255, 0.42);
+}
+
+
+/* ============================================================
+   RESULTADO
+   ============================================================ */
+
+.neon-result-card {
+    margin: 0 auto 22px;
+
+    padding: 18px;
+
+    border:
+        1px solid
+        rgba(125, 247, 255, 0.4);
+
+    border-radius: 10px;
+
+    color: #d8e9ff;
+
+    background:
+        rgba(0, 234, 255, 0.07);
+
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.neon-result-card p {
+    margin: 5px 0;
+}
+
+.neon-result-highlight {
+    color: #7dffef;
+
+    font-size: 25px;
+    font-weight: bold;
+}
+
+
+/* ============================================================
+   TABLA DEL RANKING
+   ============================================================ */
+
+.neon-ranking {
+    width: 100%;
+
+    margin: 0 0 24px;
+
+    border-collapse: collapse;
+
+    color: #ffffff;
+}
+
+.neon-ranking th,
+.neon-ranking td {
+    padding: 11px 7px;
+
+    border-bottom:
+        1px solid
+        rgba(91, 226, 255, 0.22);
+
+    text-align: center;
+}
+
+.neon-ranking th {
+    color: #7df7ff;
+
+    font-size: 12px;
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+}
+
+.neon-ranking-current {
+    color: #ffffff;
+
+    background:
+        rgba(0, 234, 255, 0.22);
+
+    box-shadow:
+        inset 0 0 15px
+        rgba(0, 234, 255, 0.12);
+}
+
+.neon-empty-ranking {
+    padding: 25px;
+
+    color: #9db0c9;
+}
+
+
+/* ============================================================
+   TEXTO DE PAUSA
+   ============================================================ */
+
+.neon-pause-hint {
+    margin-top: 24px;
+
+    color: #839bb8;
+
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+
+/* ============================================================
+   PANTALLAS PEQUEÑAS
+   ============================================================ */
+
+@media (max-width: 650px) {
+    .neon-screen {
+        padding: 10px;
+    }
+
+    .neon-panel {
+        padding: 25px 12px;
+    }
+
+    .neon-title {
+        letter-spacing: 2px;
+    }
+
+    .neon-ranking th,
+    .neon-ranking td {
+        padding: 8px 3px;
+
+        font-size: 10px;
+    }
+}
+/* ============================================================
+   GAME OVER
+   ============================================================ */
+
+.game-over-panel {
+    border-color: #ff315f;
+
+    box-shadow:
+        0 0 30px
+        rgba(255, 49, 95, 0.55),
+        inset 0 0 30px
+        rgba(255, 0, 70, 0.12);
+}
+
+.game-over-title {
+    margin: 0 0 30px;
+
+    color: #ff315f;
+
+    font-size:
+        clamp(
+            52px,
+            10vw,
+            100px
+        );
+
+    letter-spacing: 6px;
+
+    text-transform: uppercase;
+
+    text-shadow:
+        0 0 8px #ffffff,
+        0 0 20px #ff315f,
+        0 0 45px #ff003c;
+}
+
+.game-over-enter {
+    color: #ffffff;
+
+    font-size: 18px;
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    animation:
+        gameOverBlink
+        1.1s
+        infinite;
+}
+
+@keyframes gameOverBlink {
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.35;
+    }
+}
